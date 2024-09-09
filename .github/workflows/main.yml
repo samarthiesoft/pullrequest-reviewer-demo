@@ -17,5 +17,4 @@ jobs:
       - name: GPT code review Action
         uses: PierreGode/GPTcode-reviewer@v1.0.0
         with:
-          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
