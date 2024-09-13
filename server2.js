@@ -28,11 +28,6 @@ app.get("/time", (req, res) => {
     }
 });
 
-// 3. Get request count
-app.get("/request-count", (req, res) => {
-    res.status(200).json({ requestCount });
-});
-
 // Start server
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
