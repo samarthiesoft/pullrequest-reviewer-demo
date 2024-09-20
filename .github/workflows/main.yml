@@ -20,10 +20,9 @@ jobs:
   review:
     runs-on: ubuntu-latest
     steps:
-      - uses: samarthiesoft/ai-pr-reviewer@main
+      - uses: samarthiesoft/my-ai-pr-reviewer@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         with:
           debug: true
