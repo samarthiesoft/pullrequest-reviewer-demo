@@ -10,7 +10,7 @@ on:
 
 jobs:
   ai-pr-review:
-    if: ${{ github.event.label.name == 'ai-review' }}
+    if: ${{ github.event.pull_request.labels.*.name == 'ai-review' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
