@@ -20,14 +20,18 @@ jobs:
       - name: Install dependencies
         run: |
           apt-get update && apt-get install git gawk -y
+      - name: Delete existing repo
+        run: |
+          rm -rf *
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Debug
         run: |
-          pwd
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
           echo "PWD: $PWD"
           echo "GIT_DIR: $GIT_DIR"
-          cd .git && ls -la
+          ls -la
           git diff 73a23b3ff7f31ed9c6e130899e2a3221fe7becfa..9eb502d33d1adeb5bc9a6e615fc077110bdd1247
       - uses: samarthiesoft/ai-pr-reviewer@main
         env:
