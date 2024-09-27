@@ -28,7 +28,7 @@ jobs:
         run: |
           pwd
           ls -la
-          echo ${{ GITHUB_WORKSPACE }}
+          echo $GITHUB_WORKSPACE
       - uses: samarthiesoft/ai-pr-reviewer@main
         env:
           GIT_REPO_PATH: ${{ github.workspace }}
