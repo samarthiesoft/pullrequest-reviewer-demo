@@ -15,13 +15,13 @@ jobs:
     runs-on:
       labels: self-hosted
     steps:
-      - name: Install dependencies
-        run: |
-          apt-get update && apt-get install git gawk -y
-      - name: Delete existing repo
-        run: |
-          cd $GITHUB_WORKSPACE && rm -rf *  && rm -rf .git*
-          ls -al
+      # - name: Install dependencies
+      #   run: |
+      #     apt-get update && apt-get install git gawk -y
+      # - name: Delete existing repo
+      #   run: |
+      #     cd $GITHUB_WORKSPACE && rm -rf *  && rm -rf .git*
+      #     ls -al
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
