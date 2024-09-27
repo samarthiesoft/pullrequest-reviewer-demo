@@ -29,6 +29,7 @@ jobs:
           pwd
           ls -la
           echo $GITHUB_WORKSPACE
+          git diff 73a23b3ff7f31ed9c6e130899e2a3221fe7becfa..9eb502d33d1adeb5bc9a6e615fc077110bdd1247
       - uses: samarthiesoft/ai-pr-reviewer@main
         env:
           GIT_REPO_PATH: $GITHUB_WORKSPACE
