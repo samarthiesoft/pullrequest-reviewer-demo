@@ -19,8 +19,7 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-          ls -la
-          apt update && apt install git gawk -y
+          apt-add-repository ppa:git-core/ppa && apt-get update && apt install git gawk -y
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
