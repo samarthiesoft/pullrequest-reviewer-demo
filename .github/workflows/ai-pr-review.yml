@@ -1,4 +1,4 @@
-name: AI PR Review
+name: "Auto Code Review"
 
 permissions:
   contents: read
@@ -10,13 +10,21 @@ on:
 
 jobs:
   ai-pr-review:
-    if: ${{ contains(github.event.pull_request.labels.*.name, 'ai-review') }}
-    runs-on: ubuntu-latest
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'autoreview') || github.event.label.name == 'autoreview' }}
+    runs-on:
+      labels: self-hosted
+    container:
+      image: ubuntu:latest
     steps:
+      - name: Install dependencies
+        run: |
+          ls -la
+          apt update && apt install git gawk -y
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: samarthiesoft/ai-pr-reviewer@main
         env:
+          GIT_REPO_PATH: ${{ github.workspace }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
