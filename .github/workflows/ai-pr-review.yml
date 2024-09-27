@@ -14,8 +14,6 @@ jobs:
     if: ${{ contains(github.event.pull_request.labels.*.name, 'autoreview') || github.event.label.name == 'autoreview' }}
     runs-on:
       labels: self-hosted
-    container:
-      image: ubuntu:latest
     steps:
       - name: Install dependencies
         run: |
