@@ -23,6 +23,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Debug
+        run: |
+          pwd
+          ls -la
+          echo ${{ github.workspace }}
       - uses: samarthiesoft/ai-pr-reviewer@main
         env:
           GIT_REPO_PATH: ${{ github.workspace }}
