@@ -21,8 +21,6 @@ jobs:
         run: |
           apt-get update && apt-get install git gawk -y
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - name: Debug
         run: |
           pwd
