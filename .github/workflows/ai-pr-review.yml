@@ -22,7 +22,8 @@ jobs:
           apt-get update && apt-get install git gawk -y
       - name: Delete existing repo
         run: |
-          rm -rf *
+          cd $GITHUB_WORKSPACE && rm -rf *
+          ls -al
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
