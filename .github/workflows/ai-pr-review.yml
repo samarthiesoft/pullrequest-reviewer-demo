@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: samarthiesoft/ai-pr-reviewer@main
+      - uses: samarthiesoft/ai-pr-reviewer@develop
         env:
           GIT_REPO_PATH: $GITHUB_WORKSPACE/.git
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
