@@ -11,7 +11,7 @@ on:
 
 jobs:
   ai-pr-review:
-    if: ${{ contains(github.event.pull_request.labels.*.name, 'autoreview') && github.event.pull_request.state == "open" }}
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'autoreview') && github.event.pull_request.state == 'open' }}
     runs-on:
       labels: self-hosted
     container:
